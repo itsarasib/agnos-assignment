@@ -46,7 +46,7 @@ export const FingerPage: React.FC = () => {
           <FingerActive fingerPart={fingerPart} />
 
           <div className="flex justify-start">
-            <Link to="/abs-page">
+            <Link to="/">
               <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-4 text-2xl mb-10">
                 ย้อนกลับ
               </button>

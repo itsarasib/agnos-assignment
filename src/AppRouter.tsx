@@ -8,7 +8,7 @@ const AppRouter: React.FC = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/abs-page" element={<AbsPage />} />
+        <Route path="/" element={<AbsPage />} />
         <Route path="/finger-page" element={<FingerPage />} />
       </Routes>
     </BrowserRouter>
