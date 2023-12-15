@@ -1,16 +1,30 @@
 import { useState } from "react";
 import defaultAbs from "/abs/default-abs.png";
-import { absCoor } from "../components/AbsCoor";
+import { absCoor } from "../constant/AbsCoor";
 import { AbsActive } from "../components/AbsActive";
+import { Link } from "react-router-dom";
+
+export enum AbsPart {
+  AllOver = "all-over",
+  Luq = "luq",
+  Ruq = "ruq",
+  Llq = "llq",
+  Rlq = "rlq",
+  Epigastrium = "epigastrium",
+  Suprapubic = "suprapubic",
+  None = "",
+}
 
 export const AbsPage: React.FC = () => {
-  const [absPart, setAbsPart] = useState<string>("");
+  const [absPart, setAbsPart] = useState<AbsPart>(AbsPart.None);
+
+  console.log(absPart);
 
   return (
     <>
-      <div className="flex flex-col items-center bg-neutral-500 rounded-2xl">
-        <p className=" flex justify-center text-2xl bg-slate-800">
-          เจ็บท้องบริเวณไหนมากที่สุด?
+      <div className="flex flex-col items-center bg-white rounded-2xl max-w-4xl mx-auto border-8 mt-10">
+        <p className=" flex justify-center text-3xl bg-white mt-10">
+          บริเวณไหนบนท้องเจ็บมากที่สุด?
         </p>
         <div className="relative">
           <img
@@ -29,16 +43,18 @@ export const AbsPage: React.FC = () => {
                 coords={part.coords}
                 alt={part.alt}
                 className="cursor-pointer"
-                onClick={() => setAbsPart(part.name)}
+                onClick={() => setAbsPart(part.name as AbsPart)}
               />
             ))}
           </map>
           <AbsActive absPart={absPart} />
 
           <div className="flex justify-end">
-            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-4">
-              ต่อไป
-            </button>
+            <Link to="/finger-page">
+              <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-4 text-2xl mb-10">
+                ต่อไป
+              </button>
+            </Link>
           </div>
         </div>
       </div>
