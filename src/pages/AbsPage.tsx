@@ -10,7 +10,7 @@ export const AbsPage: React.FC = () => {
     <>
       <div className="flex flex-col items-center bg-neutral-500 rounded-2xl">
         <p className=" flex justify-center text-2xl bg-slate-800">
-          เจ็บท้องบริเวณไหนมากที่สุด
+          เจ็บท้องบริเวณไหนมากที่สุด?
         </p>
         <div className="relative">
           <img

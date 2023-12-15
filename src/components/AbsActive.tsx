@@ -31,6 +31,15 @@ export const AbsActive: React.FC<AbsActiveProps> = ({ absPart }) => {
               className="absolute left-0 top-0 pointer-events-none"
             />
           ))}
+          {absCoor.map((part) => (
+            <img
+              key={part.name}
+              src={part.active}
+              alt={part.alt}
+              style={{ display: part.name === absPart ? "initial" : "none" }}
+              className="absolute left-0 top-0 pointer-events-none"
+            />
+          ))}
         </>
       )}
     </>
